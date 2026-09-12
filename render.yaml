@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: life-rpg
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn --workers 2 --threads 4 --timeout 120 app:app
+    healthCheckPath: /health
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: life-rpg-db
+          property: connectionString
+
+databases:
+  - name: life-rpg-db
+    databaseName: liferpg
+    user: liferpg
+    plan: free
