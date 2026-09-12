@@ -1,8 +1,2 @@
-.venv/
-__pycache__/
-*.py[cod]
-.env
-life_rpg.db
-instance/
-.pytest_cache/
-.DS_Store
+# Created by venv; see https://docs.python.org/3/library/venv.html
+*
