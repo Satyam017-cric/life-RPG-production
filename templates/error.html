@@ -1,0 +1,2 @@
+{% extends "base.html" %}{% block title %}{{ code }} · Life RPG{% endblock %}
+{% block content %}<section class="wrap error-page"><div class="error-code">{{ code }}</div><div><div class="eyebrow">MISSION INTERRUPTED</div><h1>Something went off-script.</h1><p>{{ message }}</p><a class="primary-btn" href="{{ url_for('index') }}">Return to command</a></div></section>{% endblock %}
